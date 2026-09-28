@@ -1,4 +1,5 @@
 # Python Scene Handoff
+![Lorenz demo](docs/assets/lorenz-preview.webp)
 
 **Compute motion in Python. Finish it in your DCC.**
 
@@ -26,11 +27,13 @@ This project keeps those jobs separate: **compute the motion in Python, then han
 
 ## Quick start
 
-Requires Python 3.11–3.13. The examples are currently tested with Python 3.13.
+Requires Python 3.11–3.13 and [uv](https://docs.astral.sh/uv/). The examples are currently tested with Python 3.13.
+
+From the repository root, open a terminal and run the following. These commands are not PowerShell-specific; the same `uv` commands can be used from PowerShell, Command Prompt, bash, or zsh.
 
 To enable both glTF and USD outputs:
 
-```powershell
+```
 uv python install 3.13
 uv sync --extra usd
 uv run python examples/02_lorenz_butterfly.py
@@ -67,7 +70,7 @@ The hero example integrates the Lorenz system in Python and starts a narrow bund
 
 They begin almost on top of one another, then gradually separate on the strange attractor. The presentation uses dense 60 fps motion samples, a smooth shared time map, fine attractor threads, and subtle trailing particles.
 
-```powershell
+```
 uv run python examples/02_lorenz_butterfly.py
 ```
 
@@ -79,7 +82,7 @@ See [Lorenz example notes](docs/lorenz-butterfly.md).
 
 For the smallest possible test:
 
-```powershell
+```
 uv run python examples/01_moving_cube.py
 ```
 
