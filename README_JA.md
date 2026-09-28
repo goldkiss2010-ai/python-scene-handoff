@@ -1,4 +1,5 @@
 # Python Scene Handoff
+![Lorenz demo](docs/assets/lorenz-preview.webp)
 
 **Pythonで運動を計算し、DCCで仕上げる。**
 
