@@ -3,9 +3,7 @@
 
 **Compute motion in Python. Finish it in your DCC.**
 
-A proof-of-concept for handing **Python-generated mathematics, simulation, geometry, and motion** to creative DCC tools while keeping computation and presentation separate.
-
-The first public implementation uses standard interchange formats:
+A small proof-of-concept for handing **Python-generated, time-varying 3D scenes** to creative tools through standard interchange formats.
 
 ```text
 NumPy / SciPy / simulation / procedural Python
@@ -19,35 +17,7 @@ NumPy / SciPy / simulation / procedural Python
    After Effects          Resolve / Fusion
 ```
 
-The bridge does not require Manim. Manim, SciPy, custom numerical code, VTK/PyVista data, and other Python sources can all be front ends as long as they can produce geometry, motion, or sampled state.
-
-## Current direction
-
-The first version of this repository asks:
-
-> Can Python-computed motion be handed to a DCC as a normal 3D asset?
-
-A newer After Effects experiment goes one step further:
-
-```text
-Python math / simulation
-          ↓
-     generated JSX
-          ↓
-AE native Shape / 3D Layer / Expression
-          ↓
-editable vector asset
-```
-
-Instead of rendering a finished movie in Python, or handing off only a generic 3D asset, the current experiment generates **editable vector assets directly inside After Effects**.
-
-Python remains responsible for the numerical truth: coordinates, functions, simulation state, and sampled geometry. After Effects remains responsible for presentation: camera work, stroke, color, timing, layout, compositing, and finishing.
-
-The important distinction is that the generated JSX is not drawing a finished frame. It is building an editable AE structure that can be modified after handoff.
-
-This path is also **Manim-independent**. Manim may still be used as one possible Python-side source, but it is not required.
-
-The AE-native compiler experiment is still under development and is not yet included in this public repository.
+The bridge does not require Manim. Manim, SciPy, custom numerical code, VTK/PyVista data, and other Python sources are all possible front ends as long as they can produce a time-varying 3D state.
 
 ## Why this exists
 
