@@ -212,3 +212,32 @@ docs/
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+
+## Exact pixel-plane handoff
+
+For sensor and image diagrams, the repository now also has a small 2D path
+that preserves source-pixel coordinates exactly instead of expanding every
+pixel into a DCC object.
+
+```powershell
+uv run python examples/03_hot_pixel_sensor.py --birth 2
+```
+
+The default example is a 2000 x 2000 (4,000,000 pixel) RGGB Bayer plane. It
+writes a compact repeating-pattern CFA SVG, a separate 1 x 1 hot-pixel SVG,
+an After Effects builder JSX, and a JSON manifest.
+
+The hot pixel remains its own AE layer and is driven by a `Hot Pixel On`
+checkbox, so its birth can be represented as an instantaneous HOLD change.
+
+The same overlay can be used over a real image:
+
+```powershell
+uv run python examples/03_hot_pixel_sensor.py \
+  --width 2000 --height 2000 \
+  --image D:/images/source.png \
+  --grayscale --hot-color "#FF0000" --birth 2
+```
+
+See [exact pixel-plane handoff](docs/pixel-plane.md).
