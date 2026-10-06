@@ -251,10 +251,10 @@ def write_ae_import_jsx(
     bgLayer.parent = rig;
     hotLayer.parent = rig;
 
-    // The imported plane stays centered on the rig. The hot pixel is a hair closer
-    // to the default camera to avoid coplanar 3D ambiguity.
+    // Both layers occupy the exact same sensor plane. Layer order, not Z offset,
+    // keeps the defect visible while preserving geometric identity.
     bgLayer.property("ADBE Transform Group").property("ADBE Position").setValue([0, 0, 0]);
-    hotLayer.property("ADBE Transform Group").property("ADBE Position").setValue([0, 0, -0.01]);
+    hotLayer.property("ADBE Transform Group").property("ADBE Position").setValue([0, 0, 0]);
 
     var ctrl = comp.layers.addNull();
     ctrl.name = "HOT_PIXEL_CTRL";
